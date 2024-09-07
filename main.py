@@ -31,6 +31,7 @@ for file in os.listdir(data):
         known_encodings.append(photo_enc)
         known_data.append(file.split('.')[0])
 
+
 sample = 'sample_images'
 for file in os.listdir(sample):
     photo = read_photo(sample + '/' + file)
@@ -45,4 +46,5 @@ for file in os.listdir(sample):
                 (top, right, bottom, left) = face_recognition.face_locations(photo)[0]
                 cv2.rectangle(photo, (left, top), (right, bottom), (0, 0, 255), 2)
                 cv2.putText(photo, name, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
+                print(name, known_encodings)
                 show_image(photo)  
