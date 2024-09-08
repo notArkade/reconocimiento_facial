@@ -14,7 +14,7 @@ def read_photo(path):
     height = int(h * ratio)
     return cv2.resize(photo, (width, height))
 
-def show_image(image, window_name="Image"):
+def show_image(image, window_name="FameFrame"):
 
     cv2.imshow(window_name, image)
     cv2.waitKey(0) 
